@@ -8,7 +8,7 @@ const app = express();
 
 // Middleware
 
-var allowedOrigins = ['http://localhost:3000',
+var allowedOrigins = [
                       'https://krishna-task.netlify.app/'];
 app.use(cors({
   origin: function(origin, callback){
