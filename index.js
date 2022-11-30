@@ -8,7 +8,7 @@ const app = express();
 
 // Middleware
 
-var allowedOrigins = ['https://krishna-task.netlify.app/',
+const allowedOrigins = ['https://krishna-task.netlify.app/',
                       'http://localhost:3000/'];
 app.use(cors({
   origin: function(origin, callback){
@@ -16,7 +16,7 @@ app.use(cors({
     // (like mobile apps or curl requests)
     if(!origin) return callback(null, true);
     if(allowedOrigins.indexOf(origin) === -1){
-      var msg = 'The CORS policy for this site does not ' +
+      const msg = 'The CORS policy for this site does not ' +
                 'allow access from the specified Origin.';
       return callback(new Error(msg), false);
     }
