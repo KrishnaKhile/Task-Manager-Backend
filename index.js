@@ -2,7 +2,7 @@ const dotenv = require("dotenv").config();
 const express = require("express");
 const connectdb = require("./backend/config/connectdb.js");
 const router = require("./backend/routes/taskRoutes.js");
-const cors = require("cors");
+const cors = require("cors")
 
 const app = express();
 
@@ -10,12 +10,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-const corsOptions=(req,res,next) => {
-  res.header("Access-Control-Allow-Origin", "https://krishna-task.netlify.app");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-}
-app.use(cors(corsOptions))
+app.use(cors());
 app.use("/api/tasks",router);
 // const logger = (req, res, next) => {
 //   console.log("Middleware run");
