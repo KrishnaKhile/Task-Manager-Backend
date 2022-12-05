@@ -8,8 +8,8 @@ const app = express();
 
 // Middleware
 
-var allowedOrigins = ['http://localhost:3000',
-                      'https://krishna-task.netlify.app'];
+var allowedOrigins = ['https://preeminent-creponne-75a48c.netlify.app',
+                      'https://preeminent-creponne-75a48c.netlify.app/'];
 app.use(cors({
   origin: function(origin, callback){
     // allow requests with no origin 
