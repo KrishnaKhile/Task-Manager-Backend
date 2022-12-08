@@ -8,7 +8,7 @@ const app = express();
 
 // Middleware
 
-var allowedOrigins = ['https://preeminent-creponne-75a48c.netlify.app',
+var allowedOrigins = ['http://localhost:3000',
                       'https://preeminent-creponne-75a48c.netlify.app/'];
 app.use(cors({
   origin: function(origin, callback){
