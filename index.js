@@ -24,15 +24,15 @@ const app = express();
 //   }
 // }));
 
-const corsOptions = {
-  origin: [
-    "http://localhost:3000",
-    "https://preeminent-creponne-75a48c.netlify.app",
-  ],
-  credentials: true,
-  optionSuccessStatus: 200,
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//   origin: [
+//     "http://localhost:3000",
+//     "https://preeminent-creponne-75a48c.netlify.app",
+//   ],
+//   credentials: true,
+//   optionSuccessStatus: 200,
+// };
+app.use(cors());
 // app.use(cors({
 //   credentials: true,
 //   origin: 'http://localhost:3000'
