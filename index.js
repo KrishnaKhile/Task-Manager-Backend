@@ -2,7 +2,7 @@ const dotenv = require("dotenv").config();
 const express = require("express");
 const connectdb = require("./backend/config/connectdb.js");
 const router = require("./backend/routes/taskRoutes.js");
-const cors = require("cors")
+const cors = require("cors");
 
 const app = express();
 
@@ -12,7 +12,7 @@ const app = express();
 //                       'https://preeminent-creponne-75a48c.netlify.app'];
 // app.use(cors({
 //   origin: function(origin, callback){
-//     // allow requests with no origin 
+//     // allow requests with no origin
 //     // (like mobile apps or curl requests)
 //     if(!origin) return callback(null, true);
 //     if(allowedOrigins.indexOf(origin) === -1){
@@ -24,11 +24,14 @@ const app = express();
 //   }
 // }));
 
-const corsOptions ={
-  origin:'https://preeminent-creponne-75a48c.netlify.app', 
-  credentials:true,            //access-control-allow-credentials:true
-  optionSuccessStatus:200
-}
+const corsOptions = {
+  origin: [
+    "http://localhost:3000",
+    "https://preeminent-creponne-75a48c.netlify.app",
+  ],
+  credentials: true,
+  optionSuccessStatus: 200,
+};
 app.use(cors(corsOptions));
 // app.use(cors({
 //   credentials: true,
@@ -37,7 +40,7 @@ app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use("/api/tasks",router);
+app.use("/api/tasks", router);
 // const logger = (req, res, next) => {
 //   console.log("Middleware run");
 //   console.log(req.method);
@@ -49,11 +52,6 @@ app.use("/api/tasks",router);
 app.get("/", (req, res) => {
   res.send("Home page");
 });
-
-
-
-
-
 
 const PORT = process.env.PORT || 5000;
 
